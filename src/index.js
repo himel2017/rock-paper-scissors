@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import Player from "./player";
+import Player from "./component/player";
 import "./styles.css";
 
 const weapons = ["rock", "paper", "scissors"];
@@ -47,6 +47,7 @@ class App extends Component {
       // return "Player Two Wins!";
     }
   };
+
   selectWeapon = (weapon) => {
     this.setState({
       playerOne: weapon,
@@ -55,24 +56,44 @@ class App extends Component {
   };
   resultIncrement = (value) => {
     if (value === 1) {
+      const score = this.state.playerOneScore + 1;
       this.setState({
-        playerOneScore: this.state.playerOneScore + 1,
+        playerOneScore: score,
       });
+      localStorage.setItem("playerOneScore", score);
       // return true;
     } else {
+      const score = this.state.playerTwoScore + 1;
       this.setState({
-        playerTwoScore: this.state.playerTwoScore + 1,
+        playerTwoScore: score,
       });
+      localStorage.setItem("playerTwoScore", score);
       // return true;
     }
   };
+
+  componentDidMount() {
+    let playerOneScore = 0, playerTwoScore = 0;
+
+    const playerOneScoreValue = localStorage.getItem("playerOneScore");
+    const playerTwoScoreValue = localStorage.getItem("playerTwoScore");
+    playerOneScore = parseInt(playerOneScoreValue === null ? 0 : playerOneScoreValue);
+    playerTwoScore = parseInt(playerTwoScoreValue === null ? 0 : playerTwoScoreValue);
+
+    this.setState({
+      playerOneScore,
+      playerTwoScore,
+    });
+  }
+  
   render() {
     const { playerOne, playerTwo, winner } = this.state;
     return (
       <>
-        <div style={{ backgroundColor: "#05E38A" }}>
-          <h1 style={{ textAlign: "center" }}>Rock Paper Scissors</h1>
-          <div>
+        <div className ="main_area">
+          <div className="continer">
+          <h1 className ="header_title" style={{ textAlign: "center" }}>Waste an hour having fun</h1>
+          <div className ="game_board">
             <h3>Score:</h3>
             <h4>Player One (You): {this.state.playerOneScore}</h4>
             <h4>Player Two (Computer): {this.state.playerTwoScore}</h4>
@@ -82,7 +103,7 @@ class App extends Component {
             <Player weapon={playerOne} />
             <Player weapon={playerTwo} />
           </div>
-          <div>
+          <div className ="pick_item">
             <button
               className="weaponBtn"
               onClick={() => this.selectWeapon("rock")}
@@ -102,10 +123,11 @@ class App extends Component {
               scissor
             </button>
           </div>
-          <div className="winner">{winner ? this.selectWinner() : null}</div>
+          {/* <div className="winner">{winner ? this.selectWinner() : null}</div> */}
           <button type="button" onClick={this.startGame}>
             Start!
           </button>
+        </div>
         </div>
       </>
     );
