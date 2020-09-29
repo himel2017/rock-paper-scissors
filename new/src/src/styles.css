@@ -31,7 +31,6 @@ body {
     border-radius: 50%;
     text-align: center;
     display: inline-block;
-    margin-top: 9px;
 }
 
 .weaponBtn {
@@ -64,6 +63,60 @@ body {
     height: 200px;
     width: auto;
 }
+
+button {
+    width: 200px;
+    height: 50px;
+    display: block;
+    margin: 10px auto;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 25px;
+    background: #3F4242;
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.continer {
+    padding: 0px!important;
+    margin: 0px!important;
+    height: 88vh;
+}
+.game_board h3, .game_board h4{
+    padding: 0px!important;
+}
+.main_area {
+    margin: 20px;
+    display: none;
+}
+.pick_item {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+@media only screen and (max-width: 450px) {
+    .player-image {
+        height: 200px;
+        width: auto;
+        padding: 10px;
+    }
+    .weaponBtn {
+        width: 100px;
+        height: 50px;
+        display: inline;
+        margin: auto 15px;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 25px;
+        background: #3F4242;
+        margin: 0;
+        margin-right: 14px;
+    }
+  }
+
 
 
 
@@ -102,7 +155,6 @@ body {
     float: right;
     line-height:20px;
 }
-.mode_heading{color:#fff;}
 
 .singlebox h3 {
     color: #fff;
@@ -111,13 +163,11 @@ body {
      font-weight: 900;
      font-size: 22px;
      margin-bottom: 50px;
-     margin-left: 101px;
 }
 .singlebox {
     float: left;
     width: 50%;
     text-align: center;
-    margin-left: -30px;
 }
 .singlebox img {
     height: 350px;
@@ -129,7 +179,6 @@ body {
 .bu {
     width: 33.33%;
     display:inline-flex;
-    margin-right: -167px;
 }
  
 .buttons .b1 {
@@ -161,36 +210,12 @@ body {
     box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
 }
 
-.endB{
-    
-    display: inline-block;
-    background: #D71921 !important;
-    border: 3px solid #fff;
-    width: 140px;
-    font-weight: 900;
-    font-size: 24px;
-    border-radius:15px;
-    margin: 0 auto;
-    -webkit-box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
-    -moz-box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
-    box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
-}
-
 .start {
     display: inline-block;
     width: 100%;
     overflow: hidden;
     text-align: center;
 }
-
-.end {
-    display: inline-block;
-    width: 100%;
-    overflow: hidden;
-    text-align: center;
-   
-}
-
 
 
  
@@ -218,10 +243,6 @@ body {
         width: 100%;
         text-align: center;
     }
-    .singlebox h3 {
-
-        text-align: center;
-    }
     
     .bu {
         width: 100%;
@@ -230,11 +251,7 @@ body {
     }
     .singlebox img {
         height: 150px;
-        margin-left: 70px;
-    
     }
-
-    .mode_heading {margin-left: 0 auto;}
     .singlebox.bo {
         margin-top: -45px;
     }
@@ -267,22 +284,6 @@ body {
         width: 100%;
         text-align: center;
     }
-    .singlebox h3 {
-
-        text-align: center;
-    }
-
-    .singlebox img {
-        height: 150px;
-        margin-left: 70px;
-    
-    }
-
-
-  .mode_heading h3{
-    margin-left: 82px;
-    }
-
     
     .bu {
         width: 100%;
