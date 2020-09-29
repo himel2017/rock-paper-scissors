@@ -11,16 +11,29 @@ class App extends Component {
     winner: "",
     playerOneScore: 0,
     playerTwoScore: 0,
+    mode: "player"
+
+    
   };
 
   startGame = () => {
     let counter = 0;
     let gameInterval = setInterval(() => {
       counter++;
-      this.setState({
-        playerTwo: weapons[Math.floor(Math.random() * weapons.length)],
-        winner: "",
-      });
+
+      if(this.state.mode === "computer"){
+        this.setState({
+          playerOne: weapons[Math.floor(Math.random() * weapons.length)],
+          playerTwo: weapons[Math.floor(Math.random() * weapons.length)],
+          winner: "",
+        });
+      }else{
+        this.setState({
+          playerTwo: weapons[Math.floor(Math.random() * weapons.length)],
+          winner: "",
+        });
+      }
+      
       if (counter > 5) {
         clearInterval(gameInterval);
         this.setState({
@@ -29,6 +42,22 @@ class App extends Component {
       }
     }, 100);
   };
+
+
+  endtGame = () => {
+    let playerOneScore = 0, playerTwoScore = 0;
+
+    const playerOneScoreValue = localStorage.clear("playerOneScore");
+    const playerTwoScoreValue = localStorage.clear("playerTwoScore");
+    // playerOneScore = parseInt(playerOneScoreValue === null ? 0 : playerOneScoreValue);
+    // playerTwoScore = parseInt(playerTwoScoreValue === null ? 0 : playerTwoScoreValue);
+
+    this.setState({
+      playerOneScore,
+      playerTwoScore,
+    });
+  };
+
 
   selectWinner = () => {
     const { playerOne, playerTwo } = this.state;
@@ -77,12 +106,28 @@ class App extends Component {
 
     const playerOneScoreValue = localStorage.getItem("playerOneScore");
     const playerTwoScoreValue = localStorage.getItem("playerTwoScore");
+    const mode = localStorage.getItem("mode");
     playerOneScore = parseInt(playerOneScoreValue === null ? 0 : playerOneScoreValue);
     playerTwoScore = parseInt(playerTwoScoreValue === null ? 0 : playerTwoScoreValue);
+    
 
     this.setState({
       playerOneScore,
       playerTwoScore,
+      mode,
+    });
+  }
+
+onChangeValue = (event) => {
+
+  // set to local storage
+    localStorage.setItem("mode", event.target.value);
+
+    this.setState({
+      mode: event.target.value,
+      playerOneScore: 0,
+      playerTwoScore: 0,
+      
     });
   }
   
@@ -93,9 +138,16 @@ class App extends Component {
         <div className ="main_area">
           <div className="continer">
           <h1 className ="header_title" style={{ textAlign: "center" }}>Waste an hour having fun</h1>
+
+          <h3>Select Playing Mode:</h3>
+          <div onChange={this.onChangeValue}>
+            <input type="radio" value="player" name="mode" checked={this.state.mode === "player"} /> Player VS Computer
+            <input type="radio" value="computer" name="mode" checked={this.state.mode === "computer"} /> Computer VS Computer
+          </div>
+
           <div className ="game_board">
             <h3>Score:</h3>
-            <h4>Player One (You): {this.state.playerOneScore}</h4>
+            <h4>Player One ({this.state.mode === "player" ? "You" : "Computer"}): {this.state.playerOneScore}</h4>
             <h4>Player Two (Computer): {this.state.playerTwoScore}</h4>
           </div>
 
@@ -103,7 +155,9 @@ class App extends Component {
             <Player weapon={playerOne} />
             <Player weapon={playerTwo} />
           </div>
-          <div className ="pick_item">
+          {this.state.mode === "player" && (
+            <>
+            <div className ="pick_item">
             <button
               className="weaponBtn"
               onClick={() => this.selectWeapon("rock")}
@@ -123,10 +177,15 @@ class App extends Component {
               scissor
             </button>
           </div>
+            </>
+          )}
           {/* <div className="winner">{winner ? this.selectWinner() : null}</div> */}
           <button type="button" onClick={this.startGame}>
-            Start!
-          </button>
+
+          Start!</button>
+          
+          <button type="button" onClick={this.endtGame}>
+            End/Reset</button>!
         </div>
         </div>
       </>
