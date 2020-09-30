@@ -1,78 +1,20 @@
 * {
-    background-color:;
+     
     font-family: 'Nunito Sans', sans-serif;
-    padding: 0px;
+    
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;900&display=swap');
 
 
-body {
-    width: 100%;
-    margin: 1rem auto;
-    display: flex;
-    justify-content: space-evenly;
-    
-}
-
-.hide-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-.header_title {
-    padding: 0px!important;
-    margin: 0px!important;
-}
-
-.player {
-    width: 240px;
-    height: 135px;
-    margin: -10px 40px;
-    border-radius: 50%;
-    text-align: center;
-    display: inline-block;
-    margin-top: 9px;
-}
-
-.weaponBtn {
-    width: 100px;
-    height: 50px;
-    display: inline;
-    margin: auto 15px;
-    color: #fff;
-    font-size: 18px;
-    border-radius: 25px;
-    background: #3F4242;
-}
-
-.player:nth-child(2) {
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-}
-
-.winner {
-    width: 100px;
-    height: 55px;
-    margin: 10px auto;
-    color: brown;
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.player-image {
-    height: 200px;
-    width: auto;
-}
-
-
-
-  /** My style **/
-
   body {
     background: url(../src/assets/bg.png) no-repeat;
     height: 100%;
     width: 100%;
+ 
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .manin_wrapper {
@@ -87,31 +29,37 @@ body {
     margin-top: -20px;
 }
 .heading h1 {
-    font-size: 40px;
+    font-size: 26px;
     color:#fff;
     font-weight:800;
     text-transform: uppercase;
     line-height: 30px;
     text-align: center;
+   
 }
 
 .heading h3 {
-    font-size:30px;
+    font-size:22px;
     color:#fff;
     font-weight:700; 
     float: right;
-    line-height:20px;
+    line-height:10px;
 }
-.mode_heading{color:#fff;}
+
+.mode_heading {
+    color: #fff;
+    width: 100%;
+    overflow: hidden;
+}
+
 
 .singlebox h3 {
     color: #fff;
     text-align: center;
-     margin-top: -10px !important;
-     font-weight: 900;
-     font-size: 22px;
-     margin-bottom: 50px;
-     margin-left: 101px;
+    margin-top: -10px !important;
+    font-weight: 900;
+    font-size: 22px;
+    margin-bottom: 23px;
 }
 .singlebox {
     float: left;
@@ -120,16 +68,18 @@ body {
     margin-left: -30px;
 }
 .singlebox img {
-    height: 350px;
+    
+    height: 250px;
 }
 .buttons {
-    width: 100%;   
-    margin: 50px 0; 
+    width: 100%;
+    margin: 50px -100px;
 }
 .bu {
     width: 33.33%;
-    display:inline-flex;
-    margin-right: -167px;
+    display: inline-flex;
+    margin-right: -173px;
+    
 }
  
 .buttons .b1 {
@@ -138,6 +88,7 @@ body {
     border: 3px solid #fff;
     width: 140px;
     border-radius: 20px;
+    color: #fff;
     margin: 0 auto;
     font-weight: 900;
     font-size: 24px;
@@ -151,6 +102,7 @@ body {
     display: inline-block;
     background: #3406d2;
     border: 3px solid #fff;
+    color: #fff;
     width: 140px;
     font-weight: 900;
     font-size: 24px;
@@ -191,62 +143,16 @@ body {
    
 }
 
+button.endB { 
+    margin-top: 16px;
+    margin-left: 15px;}
 
-
- 
+button{
+    outline: none;
+}
 
 @media (min-width: 426px) and (max-width: 991.98px)    {
 
-    .manin_wrapper {
-        width:540px;
-    }
-
-    .heading h1 {
-        font-size: 20px; 
-        line-height: 0; 
-    }
-    .heading h3 {
-        font-size: 20px;
-        color: #fff;
-        font-weight: 700;
-        float: unset;
-        line-height: 20px;
-        text-align: center;
-    }
-    .singlebox {
-        float: left;
-        width: 100%;
-        text-align: center;
-    }
-    .singlebox h3 {
-
-        text-align: center;
-    }
-    
-    .bu {
-        width: 100%;
-        display: inline-flex;
-        margin-bottom:20px ; 
-    }
-    .singlebox img {
-        height: 150px;
-        margin-left: 70px;
-    
-    }
-
-    .mode_heading {margin-left: 0 auto;}
-    .singlebox.bo {
-        margin-top: -45px;
-    }
-    
-    .buttons {
-        width: 100%;
-        margin: 0px 0;
-    }
-
-}
-
-@media (min-width: 300px) and (max-width: 425px) {
     .manin_wrapper {
         width: 340px;
     }
@@ -264,42 +170,96 @@ body {
     }
     .singlebox {
         float: left;
-        width: 100%;
+        width: 133px;
         text-align: center;
+        margin-right: 58px;
+        margin-top: 35px;
+    }
+    .singlebox .bo {
+        margin: 0 auto;
+        width: 225px;
+        float: right;
     }
     .singlebox h3 {
 
         text-align: center;
     }
-
-    .singlebox img {
-        height: 150px;
-        margin-left: 70px;
-    
+    .mode_heading h3 {
+        text-align: center;
     }
 
-
-  .mode_heading h3{
-    margin-left: 82px;
-    }
-
-    
-    .bu {
-        width: 100%;
-        display: inline-flex;
-        margin-bottom:20px ; 
-    }
-    .singlebox img {
+     .singlebox img {
         height: 150px;
     }
-    .singlebox.bo {
-        margin-top: -45px;
-    }
-    
+       
     .buttons {
-        width: 100%;
-        margin: 0px 0;
+        width: 104px;
+        margin-top: 277px;
+        display: inline-flex;
+    }
+    .buttons .b1 {
+        width: 150px;
+    }
+    .startb{
+        width: 150px;
+    }
+    button.endB {
+        width: 150px;
+        margin-top: 16px;
     }
 
+
+}
+
+@media (min-width: 300px) and (max-width: 425px) {
+    .manin_wrapper {
+        width: 320px;
+    }
+    .heading h1 {
+        font-size: 20px; 
+        line-height: 0; 
+    }
+    .heading h3 {
+        font-size: 20px;
+        color: #fff;
+        font-weight: 700;
+        float: unset;
+        line-height: 20px;
+        text-align: center;
+    }
+    .singlebox {
+        width: 154px;
+        text-align: center;
+        margin: 52px auto;
+    }
+    .singlebox img {
+        height: 150px;
+    }
+
+    .singlebox .bo {
+        margin: 0 auto;
+        width: 225px;
+        float: right;
+    }
+    .singlebox h3 {
+
+        text-align: center;
+    }
+    .mode_heading h3 {
+        text-align: center;
+    }
+    .buttons {
+        width: 104px;
+        margin-top: 277px;
+        display: inline-flex;
+    }
+    
+    .startb{
+        width: 100%;
+    }
+    button.endB {
+        width: 100%;
+        margin-top: 16px;
+    }
 
 }
