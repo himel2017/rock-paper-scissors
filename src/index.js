@@ -14,8 +14,7 @@ class App extends Component {
     playerOneScore: 0,
     playerTwoScore: 0,
     mode: "player"
-
-    
+ 
   };
 
   startGame = () => {

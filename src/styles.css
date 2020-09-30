@@ -25,9 +25,11 @@
     width: 100%;
     overflow: hidden;
 }
+
 .fullwrapper {
     margin-top: -20px;
 }
+
 .heading h1 {
     font-size: 26px;
     color:#fff;
@@ -52,6 +54,12 @@
     overflow: hidden;
 }
 
+.singlebox {
+    float: left;
+    width: 50%;
+    text-align: center;
+    margin-left: -30px;
+}
 
 .singlebox h3 {
     color: #fff;
@@ -61,25 +69,15 @@
     font-size: 22px;
     margin-bottom: 23px;
 }
-.singlebox {
-    float: left;
-    width: 50%;
-    text-align: center;
-    margin-left: -30px;
-}
+
 .singlebox img {
-    
     height: 250px;
 }
-.buttons {
-    width: 100%;
-    margin: 50px -100px;
-}
+
 .bu {
     width: 33.33%;
     display: inline-flex;
-    margin-right: -173px;
-    
+    margin-right: -173px; 
 }
  
 .buttons .b1 {
@@ -89,15 +87,20 @@
     width: 140px;
     border-radius: 20px;
     color: #fff;
-    margin: 0 auto;
     font-weight: 900;
-    font-size: 24px;
+    font-size: 21px;
     text-align: center;
-    -webkit-box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
-    -moz-box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
     box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
-     
-} 
+    padding: 3px;
+    margin-right: 5px; 
+}
+
+.buttons {
+    display: inline-block;
+    margin-left: 0px;
+    margin-top: -73px;
+}
+
 .startb{
     display: inline-block;
     background: #3406d2;
@@ -145,7 +148,8 @@
 
 button.endB { 
     margin-top: 16px;
-    margin-left: 15px;}
+    margin-left: 15px;
+}
 
 button{
     outline: none;
@@ -169,11 +173,9 @@ button{
         text-align: center;
     }
     .singlebox {
-        float: left;
-        width: 133px;
+        width: 154px;
         text-align: center;
-        margin-right: 58px;
-        margin-top: 35px;
+        margin: 0 auto;
     }
     .singlebox .bo {
         margin: 0 auto;
@@ -184,26 +186,42 @@ button{
 
         text-align: center;
     }
+
+    
+    .singlebox img {
+        height: 150px;
+    }
+
     .mode_heading h3 {
         text-align: center;
     }
 
-     .singlebox img {
-        height: 150px;
-    }
-       
-    .buttons {
-        width: 104px;
-        margin-top: 277px;
-        display: inline-flex;
-    }
     .buttons .b1 {
-        width: 150px;
+        display: inline-block;
+        background: #0680d2;
+        border: 3px solid #fff;
+        width: 140px;
+        border-radius: 20px;
+        color: #fff;
+        font-weight: 900;
+        font-size: 21px;
+        text-align: center;
+        box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
+        padding: 3px;
+        margin-right: 5px; 
+    
     }
+  
+    .buttons {
+        display: inline-block;
+        margin-left: 0px;
+        margin-top: -73px;
+    }
+    
     .startb{
         width: 150px;
     }
-    button.endB {
+     .button.endB {
         width: 150px;
         margin-top: 16px;
     }
@@ -230,10 +248,11 @@ button{
     .singlebox {
         width: 154px;
         text-align: center;
-        margin: 52px auto;
+        margin: 0 auto;
     }
     .singlebox img {
-        height: 150px;
+      height: 150px;
+      margin-top: 15px;
     }
 
     .singlebox .bo {
@@ -249,17 +268,43 @@ button{
         text-align: center;
     }
     .buttons {
-        width: 104px;
-        margin-top: 277px;
-        display: inline-flex;
+        display: inline-block;
+        margin-left: 4px;
+        margin-top: -73px;
     }
     
     .startb{
-        width: 100%;
+        width: 60%;
     }
-    button.endB {
-        width: 100%;
-        margin-top: 16px;
+    .button.endB {
+        width: 47%;
+        margin: 10px auto;
+        
     }
 
-}
+    .player{
+       margin-left: 15px;}
+
+    }
+
+    .bu {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .buttons .b1 {
+        display: inline-block;
+        background: #0680d2;
+        border: 3px solid #fff;
+        width: 140px;
+        border-radius: 20px;
+        color: #fff;
+        font-weight: 900;
+        font-size: 21px;
+        text-align: center;
+        box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.24);
+        padding: 3px;
+        margin-right: 5px; 
+    
+    }
+
